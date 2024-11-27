@@ -46,7 +46,7 @@ export class Example {
     await this.likeIt(command.message);
   }
 
-  @Slash({ description: "like-ite", name: "like-it" })
+  @Slash({ description: "like-it", name: "like-it" })
   async slashLikeIt(command: CommandInteraction): Promise<void> {
     await this.likeIt(command);
   }

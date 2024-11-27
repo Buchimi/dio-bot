@@ -2,6 +2,7 @@ import { dirname, importx } from "@discordx/importer";
 import type { Interaction, Message } from "discord.js";
 import { IntentsBitField } from "discord.js";
 import { Client } from "discordx";
+import dotenv from "dotenv"
 
 export const bot = new Client({
   // To use only guild command
@@ -53,6 +54,7 @@ bot.on("messageCreate", (message: Message) => {
 });
 
 async function run() {
+  dotenv.config()
   // The following syntax should be used in the commonjs environment
   //
   // await importx(__dirname + "/{events,commands}/**/*.{ts,js}");

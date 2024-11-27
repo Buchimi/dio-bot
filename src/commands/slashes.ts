@@ -14,7 +14,8 @@ export class SlashExample {
     const commands = MetadataStorage.instance.applicationCommands.map((cmd) => {
       return { description: cmd.description, name: cmd.name };
     });
-
+    console.log(commands);
+    
     const pages = commands.map((cmd, i) => {
       const embed = new EmbedBuilder()
         .setFooter({
@@ -24,7 +25,7 @@ export class SlashExample {
         .addFields({ name: "Name", value: cmd.name })
         .addFields({
           name: "Description",
-          value: cmd.description,
+          value: cmd.description !== "" ? cmd.description : "This command has no description yet",
         });
 
       return { embeds: [embed] };
